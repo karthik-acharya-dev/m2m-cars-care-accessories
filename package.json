@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:images": "node scripts/generate-images-manifest.mjs"
+    "generate:images": "node scripts/generate-images-manifest.mjs",
+    "compress:images": "node scripts/compress-images.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
