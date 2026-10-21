@@ -9,7 +9,6 @@ const imagesDir = path.join(projectRoot, 'public', 'images');
 const outputTsFile = path.join(projectRoot, 'src', 'data', 'imagesManifest.ts');
 
 const REQUIRED_DIRS = [
-  'hero',
   'workshop',
   'car-wash',
   'glass-tinting',
@@ -19,6 +18,8 @@ const REQUIRED_DIRS = [
   'gallery',
   'inside'
 ];
+
+const EXCLUDED_DIRS = new Set(['cars', 'logo', 'hero']);
 
 // Ensure all expected subdirectories exist
 for (const dir of REQUIRED_DIRS) {
@@ -40,6 +41,14 @@ function scanImages(dir, relativeToRoot = 'images') {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
     if (entry.name.startsWith('.')) continue; // skip .DS_Store, etc.
+    if (EXCLUDED_DIRS.has(entry.name)) continue; // skip UI assets (cars, logo, hero)
+    if (
+      entry.name.toLowerCase().includes('fortuner') ||
+      entry.name.toLowerCase().includes('logo') ||
+      entry.name.toLowerCase().includes('sports-car')
+    ) {
+      continue;
+    }
 
     const fullPath = path.join(dir, entry.name);
     const relWebPath = `/${relativeToRoot}/${entry.name}`;
