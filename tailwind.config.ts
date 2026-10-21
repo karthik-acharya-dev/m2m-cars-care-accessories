@@ -40,10 +40,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-syne)", "sans-serif"],
-        heading: ["var(--font-outfit)", "sans-serif"],
-        mono: ["var(--font-space-grotesk)", "monospace"],
+        sans: ["'Plus Jakarta Sans'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
+        display: ["'Outfit'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"],
+        heading: ["'Outfit'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"],
+        mono: ["'Space Grotesk'", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       letterSpacing: {
         tighter: "-0.04em",
